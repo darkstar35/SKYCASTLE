@@ -1,0 +1,44 @@
+누르고 있으면 위로 올라갑니다.
+V
+V
+V
+드래그해서 조종하세요.
+녹색 연료로 기름을 채우세요.
+뒤로가기
+성공
+실패
+다시하기
+다음 스테이지
+스테이지 선택
+스테이지 {0}
+시작
+스와이프로 피버 시작
+터치하면 시작
+광고 보고 다시하기
+(구현 예정)
+축하합니다!
+모든 스테이지를 클리어했습니다.
+스테이지 1로 돌아가기
+HOLD TO THRUST UPWARD
+V
+V
+V
+DRAG TO STEER
+TAKE GREEN GAS TO GO FURTHER
+BACK
+CLEAR
+FAILED
+RETRY
+NEXT STAGE
+SELECT STAGE
+STAGE {0}
+START
+SWIPE TO START FEVER
+TOUCH TO START
+CONTINUE AFTER WATCHING AD
+(WORKING IN PROGRESS)
+CONGRATULATIONS!
+YOU CLEARED OUT ALL STAGES.
+RETURN TO STAGE 1
+	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ…
