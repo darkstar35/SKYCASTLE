@@ -6,9 +6,13 @@ public class Enemy1 : MonoBehaviour
 {
 
     public GameObject Cathle;
-
+    private
     // Start is called before the first frame update
 
+    void OnMouseDown()
+    {
+      //  transform.position = mousePosWorld + mOffset;
+    }
     void OnMouseDrag()
     {
       //  transform.position = mousePosWorld + mOffset;
@@ -25,5 +29,13 @@ public class Enemy1 : MonoBehaviour
 
         followVec3 = (Cathle.transform.position- this.gameObject.transform.position).normalized;
         this.transform.Translate(followVec3 * Time.deltaTime);
+    }
+
+        private void OnCollisionEnter(Collision collision) {
+        var player = collision.gameObject.GetComponentInParent<Catsle>();
+        if (player != null && player.IsGameOver == false) {
+            
+                player.nHP -= 1;
+        }
     }
 }
