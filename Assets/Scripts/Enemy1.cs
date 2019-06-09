@@ -8,6 +8,11 @@ public class Enemy1 : MonoBehaviour
     public GameObject Cathle;
 
     // Start is called before the first frame update
+
+    void OnMouseDrag()
+    {
+      //  transform.position = mousePosWorld + mOffset;
+    }
     void Start()
     {
         //Cathle = GameManager.FindObjectOfType(Cathle);

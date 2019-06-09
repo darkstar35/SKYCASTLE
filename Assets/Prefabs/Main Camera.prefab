@@ -59,12 +59,10 @@ GameObject:
   - component: {fileID: 556196813606185378}
   - component: {fileID: 556196813606185405}
   - component: {fileID: 556196813606185404}
-  - component: {fileID: 556196813606185407}
   - component: {fileID: 556196813606185376}
   - component: {fileID: 556196813606185379}
-  - component: {fileID: 5513993847739811755}
-  - component: {fileID: 3794268015461746843}
   - component: {fileID: 9161276330596630391}
+  - component: {fileID: 556196813606185407}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -113,7 +111,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 60
   orthographic: 0
   orthographic size: 14.84
   m_Depth: -1
@@ -139,22 +137,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556196813606185406}
   m_Enabled: 1
---- !u!114 &556196813606185407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556196813606185406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee151e431ea64f24ba2d424ef6ecc815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
-  hotairBalloon: {fileID: 0}
-  followVelocity: {x: 0, y: 0, z: 0}
-  followSmoothMaxTime: 0.3
 --- !u!114 &556196813606185376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,36 +227,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &5513993847739811755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556196813606185406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b1f63f68eeb4b1c8df6f34239c2dbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentLanguageCode: 0
-  IsBigNumberNotationOn: 0
---- !u!114 &3794268015461746843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556196813606185406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c6499df98854ea5978106f12214976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  koreanFont: {fileID: 0}
-  japaneseFont: {fileID: 0}
-  simplifiedChineseFont: {fileID: 0}
-  traditionalChineseFont: {fileID: 0}
 --- !u!114 &9161276330596630391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,10 +239,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca83254bc99f4e66b1bf01886370f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmPopup: {fileID: 0}
   progressMessage: {fileID: 0}
-  fontManager: {fileID: 3794268015461746843}
-  data: {fileID: 5513993847739811755}
+--- !u!114 &556196813606185407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556196813606185406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d39b466c84a446f8b39bab846f2f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1001 &5696516961012234663
 PrefabInstance:
   m_ObjectHideFlags: 0
