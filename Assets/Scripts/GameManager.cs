@@ -14,20 +14,27 @@ public class GameManager : MonoBehaviour
     public GameObject Pos1;
     public GameObject Pos2;
     public GameObject Pos3;
-public GameObject Pos4;
+    public GameObject Pos4;
     public enum Driection {NORTH, SOUTH, WEST, EAST}
     // Start is called before the first frame update
     Driection dir;
 
     void Start()
     {
-
+        
     }
-
+    public GameObject explosionPrefab;
 
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+        if(Input.GetMouseButtonDown(0))
+        {if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+        {
+            Instantiate(explosionPrefab,hit.point, Quaternion.identity);
+        }}
+        
         deltatime += Time.deltaTime;
         if(deltatime > 2)
         {              

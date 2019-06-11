@@ -43,3 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b4e9bca5a564e048bb65563488c8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deltatime: 1
+  Enemy1: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Pos1: {fileID: 0}
+  Pos2: {fileID: 0}
+  Pos3: {fileID: 0}
+  Pos4: {fileID: 0}
+  explosionPrefab: {fileID: 3081520675165631671, guid: 05e1be0e82fbf174c8c79c86584d4ee2,
+    type: 3}

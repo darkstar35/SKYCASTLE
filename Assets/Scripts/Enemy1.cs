@@ -6,6 +6,7 @@ public class Enemy1 : MonoBehaviour
 {
 
     public GameObject Cathle;
+    public int HP = 1;
     private
     // Start is called before the first frame update
 
@@ -25,10 +26,19 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+         if(HP <=0)
+          {
+            this.gameObject.SetActive(false);
+            Object.Destroy(this);
+          }
+
         Vector3 followVec3;
 
         followVec3 = (Cathle.transform.position- this.gameObject.transform.position).normalized;
         this.transform.Translate(followVec3 * Time.deltaTime);
+
+     
     }
 
         private void OnCollisionEnter(Collision collision) {
@@ -36,6 +46,9 @@ public class Enemy1 : MonoBehaviour
         if (player != null && player.IsGameOver == false) {
             
                 player.nHP -= 1;
+                HP -=1;
+
+
         }
     }
 }

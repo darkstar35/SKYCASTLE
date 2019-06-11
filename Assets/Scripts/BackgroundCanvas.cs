@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BackgroundCanvas : MonoBehaviour {
     [SerializeField] Canvas canvas = null;
     [SerializeField] Image image = null;
-    [SerializeField] HotairBalloon hotairBalloon = null;
+    [SerializeField] GameObject hotairBalloon = null;
     [SerializeField] Color colorTop;
     [SerializeField] Color colorMid;
     [SerializeField] Color colorBot;
@@ -25,7 +25,6 @@ public class BackgroundCanvas : MonoBehaviour {
     
     void Awake() {
         image.material = Instantiate(image.material);
-        hotairBalloon = GameObject.Find("Hotair Balloon").GetComponent<HotairBalloon>();
         colorTop = image.material.GetColor("_ColorTop");
         colorMid = image.material.GetColor("_ColorMid");
         colorBot = image.material.GetColor("_ColorBot");
@@ -33,7 +32,7 @@ public class BackgroundCanvas : MonoBehaviour {
 
     void SetMaterialDarker(string name, Color color) {
         Color.RGBToHSV(color, out var h, out var s, out var v);
-        image.material.SetColor(name, Color.HSVToRGB(h, s, v - hotairBalloon.Y / colorChangeScale));
+        image.material.SetColor(name, Color.HSVToRGB(h, s, v - hotairBalloon.transform.position.magnitude / colorChangeScale));
     }
 
     void Update() {

@@ -19,8 +19,11 @@ public class Catsle : MonoBehaviour
     void Update()
     {
         transform.position +=  transform.forward * Time.deltaTime;
-
-        if(nHP <= 4)
+        transform.Find("HPText").GetComponent<TextMesh>().text = nHP.ToString();
+        if(nHP <= 0)
           SceneManager.LoadScene("Ending");
+        
+
+
     }
 }
