@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Start is called before the first frame updater
+
+    public Vector3 BulletDir = Vector3.zero;
+    public float fspeed = 2f;
+
     void Start()
     {
         
@@ -14,6 +18,13 @@ public class Bullet : MonoBehaviour
     void Update()
     {
    
-       this.transform.Translate(this.transform.forward*3*Time.deltaTime);
+       this.transform.Translate(BulletDir*fspeed*Time.deltaTime);
+    }
+
+
+    public void SetDirection(Vector3 Dir)
+    {
+        BulletDir = Dir;
+
     }
 }

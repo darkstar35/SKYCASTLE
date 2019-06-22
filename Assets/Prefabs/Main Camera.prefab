@@ -157,7 +157,7 @@ MonoBehaviour:
   feverstart: {fileID: 8300000, guid: 20a367213ed440449869f1440d869676, type: 3}
   goalincheer: {fileID: 8300000, guid: fd2ff20ef1294466a98f9365411324a7, type: 3}
   goalinSound: {fileID: 8300000, guid: abda8682585184e0db39bfb136f2449e, type: 3}
-  gameover_sigh: {fileID: 8300000, guid: 5f3d4eb2333f24c4c9683a43eb8f51c2, type: 3}
+  gameover_sigh: {fileID: 8300000, guid: 5a973a51923fa43bf98e3dade885cee0, type: 3}
   dash_continuous: {fileID: 0}
   going_up: {fileID: 0}
   maydaymayday: {fileID: 8300000, guid: eca5a51633fc54c6eafcae199cffca17, type: 3}

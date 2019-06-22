@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b4e9bca5a564e048bb65563488c8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltatime: 1
+  spawntime: 0.3
+  deltatime: 3
   Enemy1: {fileID: 0}
   Enemy2: {fileID: 0}
   Enemy3: {fileID: 0}

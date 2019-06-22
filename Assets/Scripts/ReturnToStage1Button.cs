@@ -7,6 +7,6 @@ public class ReturnToStage1Button : MonoBehaviour {
     public void ReturnToStage1() {
         StageCommon.awaken = false;
         Bootstrap.LastPlayedStageNumber = 1;
-        SceneManager.LoadScene("Bootstrap");
+        SceneManager.LoadScene("Game");
     }
 }

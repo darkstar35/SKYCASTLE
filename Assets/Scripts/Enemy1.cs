@@ -29,6 +29,7 @@ public class Enemy1 : MonoBehaviour
 
          if(HP <=0)
           {
+             BalloonSound.instance.PlayGameOver_sigh();
             this.gameObject.SetActive(false);
             Object.Destroy(this);
           }
@@ -41,7 +42,20 @@ public class Enemy1 : MonoBehaviour
      
     }
 
-        private void OnCollisionEnter(Collision collision) {
+
+        void OnCollisionStay(Collision collisionInfo)
+    {
+        if(collisionInfo.transform.tag == "Bullet")
+         HP -=1;
+    }
+	void OnTriggerStay(Collider other)// void OnTriggerStay(Collider other)
+	{
+
+
+	}	
+
+        private void OnCollisionEnter(Collision collision) 
+        {
         var player = collision.gameObject.GetComponentInParent<Catsle>();
         if (player != null && player.IsGameOver == false) {
             
@@ -50,5 +64,6 @@ public class Enemy1 : MonoBehaviour
 
 
         }
+        
     }
 }

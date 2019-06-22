@@ -6,9 +6,10 @@ public class Tower : MonoBehaviour
 {
 
     public GameObject Missile; // 미사일 프리펩
-    public Tower tower;
+    //public Tower tower;
+    public Catsle catsle;
     public static float fPresseddiesize = 0.4f;
-    public float fTowerMaintiantime;
+    public float fspeed;
     public bool bIfIchoose;
     public float fFireDeltaTime;
     public float fFireDelay;
@@ -17,30 +18,31 @@ public class Tower : MonoBehaviour
 
 	public Vector3 v3ShootPos = Vector3.up;
 
+    public float maxSpeed = 5f;
     void Start()
     {
-        if (fTowerMaintiantime <= 0)
-            fTowerMaintiantime = 3;
 
         if (fFireDelay > 0)
             fFireDeltaTime = 0f;
 
-        if (tower == null)
-            tower = GameObject.Find("Tower").GetComponent<Tower>();
+   //     if (tower == null)
+   //         tower = GameObject.Find("Tower").GetComponent<Tower>();
+        catsle = GameObject.Find("Castle").GetComponent<Catsle>();
         //    transform.DOMoveX(5f, 4f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear); // 런쳐를 좌우로 반복 이동시킨다.
     }
 
-    void OnCollisionStay(Collision collisionInfo)
-    {
 
-    }
-	void OnTriggerStay(Collider other)// void OnTriggerStay(Collider other)
-	{
-
-
-	}	
 
    
+    void setdirection()
+    {
+        Object Effect = null;
+        Effect = Instantiate(Resources.Load("Effect/Effect_PlayerCrush"), transform.position, Quaternion.identity);  //부셔지는 이펙트 재생
+
+
+        Destroy(this.gameObject);
+
+    }
     void dieself()
     {
         Object Effect = null;
@@ -66,21 +68,43 @@ public class Tower : MonoBehaviour
 
     }
 
-    private float hue;
-    public float bulletIntensity;
-    public float maxSpeed = 5f;
     public void RandFire()
     {
-       
-       
-	     Instantiate(Missile, transform.position, Quaternion.identity);	   
-     //   bulletLight.intensity = bulletIntensity;
-     //   bulletLight.color = Color.HSVToRGB(hue, 1f, 1f);
-     //   bulletLight.sr.color = bulletLight.color;
-     //
-     //   hue = (hue + 0.15f) % 1.0f;
 
-     //   Destroy(ObjBullet, 4.0f);
+        
+         int Dir = Random.Range(1,5);  
+
+
+         Missile = Instantiate(Missile, transform.position, Quaternion.identity);	   
+        switch(Dir)
+         {
+            case 1:
+            Missile.GetComponent<Bullet>().SetDirection(Vector3.forward);
+            Missile.GetComponent<Bullet>().BulletDir = Vector3.forward;
+            break;
+            
+            case 2:
+            Missile.GetComponent<Bullet>().SetDirection(Vector3.right);
+            Missile.GetComponent<Bullet>().BulletDir = Vector3.right;
+            break;
+
+            case 3:
+             Missile.GetComponent<Bullet>().SetDirection(Vector3.left);
+             Missile.GetComponent<Bullet>().BulletDir = Vector3.left;
+            break;
+
+            case 4:
+             Missile.GetComponent<Bullet>().SetDirection(Vector3.back);
+             Missile.GetComponent<Bullet>().BulletDir = Vector3.back;
+             
+            break;
+
+
+         }
+	    
+       
+
+
         fFireDeltaTime = 0f;
     }
 
@@ -91,12 +115,14 @@ public class Tower : MonoBehaviour
 
         Vector3 followVec3;
 
-        followVec3 = (Catsle.FindObjectOfType<Transform>().position - this.gameObject.transform.position).normalized;
-        this.transform.Translate(followVec3 * Time.deltaTime);
+        followVec3 = (catsle.transform.position - this.gameObject.transform.position).normalized;
+        this.transform.Translate(followVec3* fspeed * Time.deltaTime);
+       
 
 
         if (fFireDeltaTime >= fFireDelay)
-        {
+        {  
+    
                     RandFire();
                     fFireDeltaTime = 0f;
 
@@ -109,4 +135,14 @@ public class Tower : MonoBehaviour
 
 
     }
+
+        void OnCollisionStay(Collision collisionInfo)
+    {
+
+    }
+	void OnTriggerStay(Collider other)// void OnTriggerStay(Collider other)
+	{
+
+
+	}	
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;using UnityEngine.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Catsle : MonoBehaviour
 {
@@ -9,9 +10,17 @@ public class Catsle : MonoBehaviour
     [SerializeField] AudioClip gameOver = null;
     [SerializeField] AudioClip startBoost = null;
 
+    public GameObject tower; 
+
+    public int gold = 10;
+
     // Start is called before the first frame update
     void Start()
     {
+
+   //     if(tower == null)
+   //     tower = gameObject.GetComponent<Tower>();
+
         IsGameOver = false;
     }
 
@@ -21,8 +30,16 @@ public class Catsle : MonoBehaviour
         transform.position +=  transform.forward * Time.deltaTime;
         transform.Find("HPText").GetComponent<TextMesh>().text = nHP.ToString();
         if(nHP <= 0)
-          SceneManager.LoadScene("Ending");
-        
+          SceneManager.LoadScene("Fail");
+
+
+    }
+
+    public void MakeTower()
+    {
+        Instantiate(tower , transform.position + new Vector3(10,10,10),  Quaternion.identity);
+
+
 
 
     }

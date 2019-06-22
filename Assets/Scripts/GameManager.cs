@@ -6,6 +6,8 @@ using System;
 public class GameManager : MonoBehaviour
 {
 
+
+    public float spawntime = 2;
     public float deltatime;
     public GameObject Enemy1;
     public GameObject Enemy2;
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
         }}
         
         deltatime += Time.deltaTime;
-        if(deltatime > 2)
+        if(deltatime > spawntime)
         {              
          DirE = UnityEngine.Random.RandomRange(1,4);
 
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
             Instantiate(Enemy1, Pos2.transform.position, transform.rotation);
             if(DirE == 3)
             Instantiate(Enemy1, Pos3.transform.position, transform.rotation);
-                  if(DirE == 4)
+            if(DirE == 4)
             Instantiate(Enemy1, Pos4.transform.position, transform.rotation);
             
              deltatime = 0f;

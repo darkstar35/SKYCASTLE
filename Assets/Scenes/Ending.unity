@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 556196813606185407, guid: e23757ca4cfe34e05b059bd65e4c59a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23757ca4cfe34e05b059bd65e4c59a4, type: 3}
 --- !u!1 &415239598
@@ -608,8 +613,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\uCD95\uD558\uD569\uB2C8\uB2E4!\n\uBAA8\uB4E0 \uC2A4\uD14C\uC774\uC9C0\uB97C
-    \uD074\uB9AC\uC5B4\uD588\uC2B5\uB2C8\uB2E4."
+  m_text: "\uCD95\uD558\uD569\uB2C8\uB2E4!\n \uD074\uB9AC\uC5B4\uD588\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8f4b02be8d8e42cfa76afb8a88c3859, type: 2}
   m_sharedMaterial: {fileID: -4906057758283591719, guid: b8f4b02be8d8e42cfa76afb8a88c3859,
@@ -679,10 +683,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 925098630}
-    characterCount: 24
+    characterCount: 16
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
     lineCount: 2
     pageCount: 1
